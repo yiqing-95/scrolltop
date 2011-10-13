@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class LScrollTop extends CWidget
+class ScrollTop extends CWidget
 {
 
     /**
