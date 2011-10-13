@@ -18,6 +18,11 @@ usage:
   echo str_repeat('<br/>',65)."\n";
 
 
+/**
+*  the class name should be same to the ScrollTop class   ,
+*  i  just modify it  to another name !
+*  you can place the extension anywhere you like , then use the pathAlias to refer
+*/
 $this->widget('common.widgets.LScrollTop',array(
         'label' => 'Go on top',
         'speed' => 'slow'
