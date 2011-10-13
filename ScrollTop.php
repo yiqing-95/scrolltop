@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class ScrollTop extends CWidget
+class LScrollTop extends CWidget
 {
 
     /**
@@ -40,7 +40,8 @@ class ScrollTop extends CWidget
     public function init()
     {
         self::$counter++;
-        Yii::app()->getClientScript()->registerScript($this->id + '_' + ScrollTop::$counter, '
+        Yii::app()->getClientScript()->registerCoreScript('jquery')
+        ->registerScript($this->id + '_' + self::$counter, '
                 $(function() {
                     $("#' . ($this->id + '_' + self::$counter) . '").click(function() {
                         $("html,body").animate({ scrollTop : 0 }, "' . ($this->speed) . '");
