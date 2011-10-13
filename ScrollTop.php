@@ -39,9 +39,8 @@ class ScrollTop extends CWidget
      */
     public function init()
     {
-        self::$counter++;
-        
-        $this->id .= '_'.self::$counter;
+              
+        $this->id .= '_'.self::$counter++;
 
         Yii::app()->getClientScript()->registerCoreScript('jquery')
         ->registerScript(__CLASS__.'#'. $this->id , '
