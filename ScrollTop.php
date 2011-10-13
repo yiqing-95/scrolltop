@@ -6,6 +6,12 @@ class ScrollTop extends CWidget {
     public $label = '^top';
     public $speed = 'slow';
     public static $counter;
+    
+   
+     
+    public $linkOptions = array(); 
+ 
+
 
     public function init() {
         ScrollTop::$counter++;
@@ -16,7 +22,9 @@ class ScrollTop extends CWidget {
                         return false;
                     });
                 });');
-        echo '<a href="#" id="' . ($this->id + '_' + ScrollTop::$counter) . '">' . ($this->label) . '</a>';
+                
+        echo CHtml::link($this->label,$url='#',CMap::mergeArray(array('id'=>$this->id),$this->linkOptions));
+       
     }
 
 }
