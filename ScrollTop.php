@@ -40,16 +40,19 @@ class LScrollTop extends CWidget
     public function init()
     {
         self::$counter++;
+        
+        $this->id .= '_'.self::$counter;
+
         Yii::app()->getClientScript()->registerCoreScript('jquery')
         ->registerScript($this->id + '_' + self::$counter, '
                 $(function() {
-                    $("#' . ($this->id + '_' + self::$counter) . '").click(function() {
+                    $("#' .$this->id. '").click(function() {
                         $("html,body").animate({ scrollTop : 0 }, "' . ($this->speed) . '");
                         return false;
                     });
                 });');
 
-        echo CHtml::link($this->label, $url = '#', CMap::mergeArray(array('id' => $this->id), $this->linkOptions));
+        echo CHtml::link($this->label,  '#', CMap::mergeArray(array('id' => $this->id), $this->linkOptions));
 
     }
 
