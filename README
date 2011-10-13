@@ -1,3 +1,40 @@
+usage:
+
+  in the view file:
+   
+<style type="text/css">
+    .to-top{
+        display: block;
+        background-color: #c1e4fa;
+        width:120px;
+        height: 25px;
+        float: right;
+        padding: 5px 0;
+    }
+
+</style>
+
+<?php
+  echo str_repeat('<br/>',65)."\n";
+
+
+$this->widget('common.widgets.LScrollTop',array(
+        'label' => 'Go on top',
+        'speed' => 'slow'
+)); ?>
+<?php
+$this->widget('common.widgets.LScrollTop',array(
+        'label' => 'Go on top2',
+        'speed' => 'slow',
+        'linkOptions' => array(
+            'class'=> 'to-top'
+        )
+
+)); ?>
+
+   
+
+
 this widget  yet have some promote space .
             consider   this scenario:
                   the  scroll to-top  button  do not show util we drag the right side scroll bar ,when we need
