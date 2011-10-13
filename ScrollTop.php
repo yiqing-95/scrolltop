@@ -44,7 +44,7 @@ class ScrollTop extends CWidget
         $this->id .= '_'.self::$counter;
 
         Yii::app()->getClientScript()->registerCoreScript('jquery')
-        ->registerScript($this->id + '_' + self::$counter, '
+        ->registerScript($this->id .'_' . self::$counter, '
                 $(function() {
                     $("#' .$this->id. '").click(function() {
                         $("html,body").animate({ scrollTop : 0 }, "' . ($this->speed) . '");
