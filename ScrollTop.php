@@ -58,7 +58,7 @@ class ScrollTop extends CWidget
 }
 
 //===========================================================================
-
+<?php
 /**
  * Created by JetBrains PhpStorm.
  * User: yiqing
@@ -217,6 +217,10 @@ class KScrollToWidget extends CWidget
         }
         if(is_array($cssSettings)){
 
+            
+           $this->cssSettings = CMap::mergeArray($this->defaultCssSettings,$cssSettings);
+
+
              //position handle
             if( ($position = strtolower($this->position))!== 'right'){
                 if(in_array($position,array('right','left','center'))){
@@ -226,8 +230,6 @@ class KScrollToWidget extends CWidget
                     throw new CException('position should be right , left or center , you give is '.$this->position);
                 }
             }
-            
-           $this->cssSettings = CMap::mergeArray($this->defaultCssSettings,$cssSettings);
 
             //iterate to handle delete css key
             foreach($this->cssSettings as $k=>$v){
@@ -301,8 +303,9 @@ class KScrollToWidget extends CWidget
     }
 
     /**
+     * use an array to generate  Css  code
      * @param array $cssSettings
-     * @param bool $withCurlyBrace 是否带上大括号返回
+     * @param bool $withCurlyBrace   whether close with curlyBrace |是否带上大括号返回
      * @return string
      * 根据数组生成css设置代码
      */
@@ -319,8 +322,10 @@ class KScrollToWidget extends CWidget
     }
 
     /**
-     * @param string $cssString
+     * parse the css code  to php array
+     * @param string $cssString  
      * @return array
+     *
      * 从css代码 生成array 需要取掉两边的空格带大括号  如果有的话
      * 需要去除代码中的注释 找个工具方法或者网上搜索
      */
