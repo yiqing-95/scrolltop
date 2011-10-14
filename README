@@ -45,3 +45,47 @@ this widget  yet have some promote space .
                   the  scroll to-top  button  do not show util we drag the right side scroll bar ,when we need
    drag the right side scrollbar this widget will display on the right bottom coner of screeen . when no need the
  scroll to top functionality this widget disappear !
+
+//===================================================
+usage for the new version: 
+in your view file :
+  
+<div style="height:1250px">
+    click the following  there button  to see the effects
+</div>
+<?php
+ // echo str_repeat('<br/>',65)."\n";
+
+
+$this->widget('common.widgets.KScrollToWidget',array(
+        'label' => 'Go on top',
+        'speed' => 'slow',
+                                                   'cssSettings'=>array(
+                                                      'background-color'=> '#78901f',
+                                                       'width'=>'200px'
+                                                  )
+));
+?>
+
+<?php
+$this->widget('common.widgets.KScrollToWidget',array(
+        'label' => 'toTop2',
+        'speed' => 200,
+        'position'=> 'center',
+                                                  'cssSettings'=>array(
+                                                    //  'background-color'=> '#446477'
+                                                  )
+)); ?>
+
+
+
+<?php
+
+$this->widget('common.widgets.KScrollToWidget',array(
+        'label' => 'toTop3',
+        'speed' => 200,
+        'position'=> 'left',
+                                                   'cssSettings'=>array(
+                                                     'background-color'=> '#116077'
+                                                  )
+)); ?>
